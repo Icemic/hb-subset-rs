@@ -421,7 +421,7 @@ impl<'s, 'a, T> DoubleEndedIterator for IterImpl<'s, 'a, T> {
 /// let mut subset = SubsetInput::new()?;
 /// let mut unicode_set = subset.unicode_set();
 /// // drop(unicode_set);                               // This needs to be called to delete unicode_set,
-/// # let font = FontFace::new(Blob::from_bytes(&[])?)?;
+/// # let font = FontFace::new(Blob::from_file("tests/fonts/NotoSans.ttf")?)?;
 /// let new_font = subset.subset_font(&font)?;  // otherwise this line would not compile as unicode_set is already
 ///                                                     // holding a mutable reference to subset.
 /// # Ok(())
