@@ -18,8 +18,9 @@ fn main() {
 
 fn build_harfbuzz() -> Vec<PathBuf> {
     cc::Build::new()
+        .compiler("clang")
         .cpp(true)
-        .flag("-std=c++11")
+        .flag("-std=c++17")
         .warnings(false)
         .file("harfbuzz/src/harfbuzz-subset.cc")
         .compile("embedded-harfbuzz-subset");
